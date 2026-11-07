@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Code editor window illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1b4e"/><stop offset="1" stop-color="#0f3d3a"/></linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <circle cx="700" cy="440" r="160" fill="#fbbf24" opacity=".1"/>
+  <!-- editor window -->
+  <rect x="100" y="60" width="600" height="380" rx="20" fill="#0b1226" stroke="#ffffff" stroke-opacity=".15"/>
+  <rect x="100" y="60" width="600" height="46" rx="20" fill="#121b38"/>
+  <rect x="100" y="86" width="600" height="20" fill="#121b38"/>
+  <circle cx="132" cy="84" r="6" fill="#ff5f57"/><circle cx="154" cy="84" r="6" fill="#febc2e"/><circle cx="176" cy="84" r="6" fill="#28c840"/>
+  <rect x="215" y="68" width="110" height="38" rx="8" fill="#0b1226"/>
+  <rect x="232" y="82" width="76" height="8" rx="4" fill="#2dd4bf"/>
+  <!-- gutter -->
+  <rect x="100" y="106" width="52" height="334" fill="#ffffff" opacity=".03"/>
+  <g fill="#ffffff" opacity=".25">
+    <rect x="120" y="134" width="14" height="7" rx="3"/><rect x="120" y="164" width="14" height="7" rx="3"/>
+    <rect x="120" y="194" width="14" height="7" rx="3"/><rect x="120" y="224" width="14" height="7" rx="3"/>
+    <rect x="120" y="254" width="14" height="7" rx="3"/><rect x="120" y="284" width="14" height="7" rx="3"/>
+    <rect x="120" y="314" width="14" height="7" rx="3"/><rect x="120" y="344" width="14" height="7" rx="3"/>
+    <rect x="120" y="374" width="14" height="7" rx="3"/><rect x="120" y="404" width="14" height="7" rx="3"/>
+  </g>
+  <!-- code lines -->
+  <g stroke-linecap="round" stroke-width="9">
+    <line x1="176" y1="138" x2="236" y2="138" stroke="#c084fc"/><line x1="248" y1="138" x2="340" y2="138" stroke="#7dd3fc"/><line x1="352" y1="138" x2="372" y2="138" stroke="#ffffff" stroke-opacity=".5"/>
+    <line x1="200" y1="168" x2="260" y2="168" stroke="#2dd4bf"/><line x1="272" y1="168" x2="450" y2="168" stroke="#ffffff" stroke-opacity=".35"/>
+    <line x1="200" y1="198" x2="300" y2="198" stroke="#fbbf24"/><line x1="312" y1="198" x2="420" y2="198" stroke="#ffffff" stroke-opacity=".3"/>
+    <line x1="224" y1="228" x2="280" y2="228" stroke="#c084fc"/><line x1="292" y1="228" x2="500" y2="228" stroke="#7dd3fc"/>
+    <line x1="224" y1="258" x2="330" y2="258" stroke="#ffffff" stroke-opacity=".35"/><line x1="342" y1="258" x2="400" y2="258" stroke="#fbbf24"/>
+    <line x1="200" y1="288" x2="230" y2="288" stroke="#ffffff" stroke-opacity=".5"/>
+    <line x1="176" y1="318" x2="250" y2="318" stroke="#c084fc"/><line x1="262" y1="318" x2="380" y2="318" stroke="#2dd4bf"/><line x1="392" y1="318" x2="470" y2="318" stroke="#ffffff" stroke-opacity=".35"/>
+    <line x1="200" y1="348" x2="320" y2="348" stroke="#7dd3fc"/><line x1="332" y1="348" x2="430" y2="348" stroke="#ffffff" stroke-opacity=".3"/>
+    <line x1="200" y1="378" x2="280" y2="378" stroke="#fbbf24"/><line x1="292" y1="378" x2="360" y2="378" stroke="#ffffff" stroke-opacity=".35"/>
+    <line x1="176" y1="408" x2="196" y2="408" stroke="#ffffff" stroke-opacity=".5"/>
+  </g>
+  <!-- cursor -->
+  <rect x="208" y="396" width="4" height="22" rx="2" fill="#2dd4bf"/>
+  <!-- run badge -->
+  <rect x="560" y="360" width="110" height="54" rx="14" fill="#2dd4bf"/>
+  <path d="M594 375 l22 12 l-22 12 z" fill="#06121f"/>
+  <line x1="628" y1="387" x2="654" y2="387" stroke="#06121f" stroke-width="6" stroke-linecap="round"/>
+</svg>

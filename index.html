@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carl Vincent B. Aquino | Information Technology Student</title>
+  <meta name="description" content="Personal digital portfolio of Carl Vincent B. Aquino, a 21-year-old Information Technology student at STI College Rosario.">
+  <meta name="theme-color" content="#0a0f1f">
+
+  <!-- Simple "CV" favicon drawn inline so no extra file is needed -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0f1f'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' text-anchor='middle' fill='%232dd4bf'%3ECV%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts: Space Grotesk (headings), Inter (body), JetBrains Mono (code accents) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Tiny bootstrap: (1) marks JS as available so reveal animations can hide
+       elements safely, (2) applies the saved theme before first paint (no flash). -->
+  <script>
+    document.documentElement.classList.add('js');
+    try {
+      var saved = localStorage.getItem('cv-theme');
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) { /* storage may be blocked; default theme is fine */ }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ======================================================================
+       SVG ICON SPRITE – reused everywhere through the SVG "use" element
+       ====================================================================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="i-network" viewBox="0 0 24 24"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></symbol>
+      <symbol id="i-laptop" viewBox="0 0 24 24"><rect width="18" height="12" x="3" y="4" rx="2"/><path d="M2 20h20"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    </defs>
+  </svg>
+
+
+  <!-- ======================================================================
+       NAVIGATION
+       ====================================================================== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__logo" aria-label="Carl Vincent Aquino – back to top">
+        <span class="nav__logo-mark">CV</span><span class="nav__logo-dot">.</span>
+      </a>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#home">Home</a></li>
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#skills">Skills</a></li>
+          <li><a class="nav__link" href="#education">Education</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <!-- Light / dark theme toggle (handled in main.js) -->
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
+          <svg class="icon icon--moon"><use href="#i-moon"/></svg>
+          <svg class="icon icon--sun"><use href="#i-sun"/></svg>
+        </button>
+        <!-- Mobile menu button -->
+        <button class="icon-btn nav__burger" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg class="icon icon--open"><use href="#i-menu"/></svg>
+          <svg class="icon icon--close"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <main id="main">
+
+    <!-- ====================================================================
+         1. HERO
+         ==================================================================== -->
+    <section class="hero" id="home">
+      <!-- Decorative background layers -->
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--teal"></span>
+        <span class="blob blob--indigo"></span>
+        <span class="blob blob--amber"></span>
+        <span class="hero__grid"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <!-- Text column -->
+        <div class="hero__content">
+          <p class="eyebrow reveal"><span class="eyebrow__pulse"></span> Available for learning &amp; collaboration</p>
+
+          <h1 class="hero__title reveal" style="--d:80ms">
+            Hi, I'm <span class="text-gradient">Carl Vincent B. Aquino</span>
+          </h1>
+
+          <h2 class="hero__role reveal" style="--d:160ms">Information Technology Student</h2>
+
+          <!-- Typing effect: words rotate via main.js -->
+          <p class="hero__typed reveal" style="--d:220ms" aria-live="off">
+            <span class="mono-muted">&gt; I enjoy building</span>
+            <span class="typed" id="typed" data-words='["websites","databases","networks","solutions","skills"]'>websites</span><span class="typed-cursor" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero__intro reveal" style="--d:280ms">
+            A curious, hands-on learner from STI College Rosario who loves computers, programming
+            and turning ideas into working technology &ndash; one project at a time.
+          </p>
+
+          <div class="hero__cta reveal" style="--d:340ms">
+            <a href="#about" class="btn btn--primary">
+              Learn About Me
+              <svg class="icon"><use href="#i-arrow-down"/></svg>
+            </a>
+            <a href="#contact" class="btn btn--ghost">
+              Contact Me
+              <svg class="icon"><use href="#i-arrow-right"/></svg>
+            </a>
+          </div>
+
+          <!-- Quick stats (numbers animate when scrolled into view) -->
+          <ul class="hero__stats reveal" style="--d:420ms">
+            <li><strong><span data-count="21">0</span></strong><span>Years old</span></li>
+            <li><strong><span data-count="5">0</span></strong><span>Core skill areas</span></li>
+          </ul>
+        </div>
+
+        <!-- Portrait column -->
+        <div class="hero__visual reveal reveal--zoom" style="--d:200ms">
+          <div class="photo-card" id="photo-card">
+            <span class="photo-card__glow" aria-hidden="true"></span>
+            <span class="photo-card__ring" aria-hidden="true"></span>
+
+            <div class="photo-card__frame">
+              <!-- Replace assets/profile.jpg to change the portrait -->
+              <img src="assets/profile.jpg"
+                   alt="Portrait of Carl Vincent B. Aquino wearing a black suit and tie"
+                   width="1254" height="1254" fetchpriority="high">
+            </div>
+
+            <!-- Floating info badges -->
+            <div class="float-badge float-badge--school">
+              <span class="float-badge__icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+              <span><strong>STI College</strong><small>Rosario</small></span>
+            </div>
+
+            <div class="float-badge float-badge--field">
+              <span class="float-badge__icon float-badge__icon--amber"><svg class="icon"><use href="#i-laptop"/></svg></span>
+              <span><strong>Information</strong><small>Technology</small></span>
+            </div>
+
+            <!-- Little "code window" for a techy touch -->
+            <div class="code-chip" aria-hidden="true">
+              <span class="code-chip__dots"><i></i><i></i><i></i></span>
+<pre><span class="c-key">const</span> carl = {
+  <span class="c-prop">age</span>: <span class="c-num">21</span>,
+  <span class="c-prop">learning</span>: <span class="c-bool">true</span>
+};</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll to About section">
+        <span class="scroll-hint__mouse"><i></i></span>
+      </a>
+    </section>
+
+
+    <!-- ====================================================================
+         2. ABOUT ME
+         ==================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__eyebrow">01 / about</span>
+          <h2 class="section-head__title">About <span class="text-gradient">Me</span></h2>
+          <p class="section-head__lead">A little about who I am and what drives me.</p>
+        </header>
+
+        <div class="about">
+          <!-- Biography -->
+          <div class="about__bio reveal reveal--left">
+            <p>
+              I'm <strong>Carl Vincent B. Aquino</strong>, a <strong>21-year-old Information Technology
+              student</strong> at <strong>STI College Rosario</strong>. I'm fascinated by how computers,
+              software and networks work together, and I enjoy taking things apart to understand what makes them tick.
+            </p>
+            <p>
+              Programming is where my curiosity meets creativity: writing code, fixing bugs and seeing an idea
+              come alive on screen is incredibly rewarding. Beyond the classroom, I keep exploring new tools
+              and technologies because I believe <em>continuous learning</em> is the best skill an IT professional can have.
+            </p>
+
+            <ul class="interest-list" aria-label="Interests">
+              <li><svg class="icon"><use href="#i-code"/></svg> Programming</li>
+              <li><svg class="icon"><use href="#i-laptop"/></svg> Computers</li>
+              <li><svg class="icon"><use href="#i-globe"/></svg> Web Development</li>
+              <li><svg class="icon"><use href="#i-network"/></svg> Networking</li>
+              <li><svg class="icon"><use href="#i-book"/></svg> Continuous Learning</li>
+            </ul>
+          </div>
+
+          <!-- Personal information cards -->
+          <div class="about__cards">
+            <article class="info-card reveal" style="--d:80ms">
+              <span class="info-card__icon"><svg class="icon"><use href="#i-user"/></svg></span>
+              <h3>Full Name</h3>
+              <p>Carl Vincent B. Aquino</p>
+            </article>
+            <article class="info-card reveal" style="--d:160ms">
+              <span class="info-card__icon"><svg class="icon"><use href="#i-calendar"/></svg></span>
+              <h3>Age</h3>
+              <p>21 years old</p>
+            </article>
+            <article class="info-card reveal" style="--d:240ms">
+              <span class="info-card__icon"><svg class="icon"><use href="#i-building"/></svg></span>
+              <h3>School</h3>
+              <p>STI College Rosario</p>
+            </article>
+            <article class="info-card reveal" style="--d:320ms">
+              <span class="info-card__icon"><svg class="icon"><use href="#i-laptop"/></svg></span>
+              <h3>Course / Field</h3>
+              <p>Information Technology</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         3. SKILLS
+         Edit the --level value (0-100%) and data-count number to change a bar.
+         ==================================================================== -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__eyebrow">02 / skills</span>
+          <h2 class="section-head__title">My <span class="text-gradient">Skills</span></h2>
+          <p class="section-head__lead">The core IT areas I'm building strong foundations in.</p>
+        </header>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal" style="--d:0ms; --level:80%">
+            <div class="skill-card__top">
+              <span class="skill-card__icon"><svg class="icon"><use href="#i-code"/></svg></span>
+              <span class="skill-card__pct"><span data-count="80">0</span>%</span>
+            </div>
+            <h3>Programming</h3>
+            <p>Writing clean, logical code and solving problems with algorithms and data structures.</p>
+            <div class="skill-bar" role="img" aria-label="Programming proficiency 80 percent"><span class="skill-bar__fill"></span></div>
+          </article>
+
+          <article class="skill-card reveal" style="--d:80ms; --level:85%">
+            <div class="skill-card__top">
+              <span class="skill-card__icon"><svg class="icon"><use href="#i-globe"/></svg></span>
+              <span class="skill-card__pct"><span data-count="85">0</span>%</span>
+            </div>
+            <h3>Web Development</h3>
+            <p>Building responsive, accessible websites with HTML, CSS and JavaScript.</p>
+            <div class="skill-bar" role="img" aria-label="Web development proficiency 85 percent"><span class="skill-bar__fill"></span></div>
+          </article>
+
+          <article class="skill-card reveal" style="--d:160ms; --level:75%">
+            <div class="skill-card__top">
+              <span class="skill-card__icon"><svg class="icon"><use href="#i-database"/></svg></span>
+              <span class="skill-card__pct"><span data-count="75">0</span>%</span>
+            </div>
+            <h3>Database Management</h3>
+            <p>Designing tables, writing SQL queries and keeping data organized and reliable.</p>
+            <div class="skill-bar" role="img" aria-label="Database management proficiency 75 percent"><span class="skill-bar__fill"></span></div>
+          </article>
+
+          <article class="skill-card reveal" style="--d:240ms; --level:82%">
+            <div class="skill-card__top">
+              <span class="skill-card__icon"><svg class="icon"><use href="#i-wrench"/></svg></span>
+              <span class="skill-card__pct"><span data-count="82">0</span>%</span>
+            </div>
+            <h3>Troubleshooting</h3>
+            <p>Diagnosing hardware and software issues and finding practical, lasting fixes.</p>
+            <div class="skill-bar" role="img" aria-label="Troubleshooting proficiency 82 percent"><span class="skill-bar__fill"></span></div>
+          </article>
+
+          <article class="skill-card reveal" style="--d:320ms; --level:70%">
+            <div class="skill-card__top">
+              <span class="skill-card__icon"><svg class="icon"><use href="#i-network"/></svg></span>
+              <span class="skill-card__pct"><span data-count="70">0</span>%</span>
+            </div>
+            <h3>Computer Networking</h3>
+            <p>Understanding IP addressing, subnetting, routing and how devices communicate.</p>
+            <div class="skill-bar" role="img" aria-label="Computer networking proficiency 70 percent"><span class="skill-bar__fill"></span></div>
+          </article>
+
+          <!-- Tools & technologies card -->
+          <article class="skill-card skill-card--tools reveal" style="--d:400ms">
+            <h3>Tools &amp; Technologies</h3>
+            <p>Things I use while learning and building.</p>
+            <ul class="chip-list">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Python</li><li>Java</li>
+              <li>SQL</li><li>MySQL</li><li>Git</li><li>Linux</li><li>VS Code</li><li>Packet Tracer</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         5. EDUCATION
+         ==================================================================== -->
+    <section class="section" id="education">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__eyebrow">03 / education</span>
+          <h2 class="section-head__title">My <span class="text-gradient">Education</span></h2>
+          <p class="section-head__lead">Where I'm building my foundation in technology.</p>
+        </header>
+
+        <div class="education">
+          <!-- Main school card -->
+          <article class="edu-card reveal reveal--left">
+            <div class="edu-card__head">
+              <span class="edu-card__icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+              <div>
+                <p class="edu-card__status"><span class="eyebrow__pulse"></span> Currently enrolled</p>
+                <h3>STI College Rosario</h3>
+                <p class="edu-card__field">Information Technology</p>
+              </div>
+            </div>
+            <p class="edu-card__text">
+              Studying Information Technology to gain practical, industry-ready skills in software,
+              databases, networks and systems &ndash; while developing teamwork, communication and problem-solving habits.
+            </p>
+            <!-- TODO: add year level, expected graduation, honors or awards here -->
+            <ul class="chip-list">
+              <li>Programming</li><li>Web Development</li><li>Databases</li><li>Networking</li><li>Systems</li>
+            </ul>
+          </article>
+
+          <!-- Learning highlights -->
+          <div class="edu-points">
+            <article class="edu-point reveal" style="--d:100ms">
+              <span class="edu-point__icon"><svg class="icon"><use href="#i-code"/></svg></span>
+              <div>
+                <h4>Programming Fundamentals</h4>
+                <p>Logic, algorithms and writing maintainable code.</p>
+              </div>
+            </article>
+            <article class="edu-point reveal" style="--d:200ms">
+              <span class="edu-point__icon"><svg class="icon"><use href="#i-database"/></svg></span>
+              <div>
+                <h4>Database Systems</h4>
+                <p>Data modeling, SQL and information management.</p>
+              </div>
+            </article>
+            <article class="edu-point reveal" style="--d:300ms">
+              <span class="edu-point__icon"><svg class="icon"><use href="#i-network"/></svg></span>
+              <div>
+                <h4>Networking Essentials</h4>
+                <p>How networks are designed, secured and maintained.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ====================================================================
+         6. CONTACT
+         ==================================================================== -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="section-head__eyebrow">04 / contact</span>
+          <h2 class="section-head__title">Contact <span class="text-gradient">Me</span></h2>
+          <p class="section-head__lead">Have a question, idea or opportunity? I'd love to hear from you.</p>
+        </header>
+
+        <div class="contact">
+          <!-- Left: intro + socials -->
+          <div class="contact__info reveal reveal--left">
+            <h3>Let's connect</h3>
+            <p>
+              Whether it's a school project, a collaboration or just a chat about technology,
+              send a message and I'll get back to you as soon as I can.
+            </p>
+
+            <ul class="contact__list">
+              <li>
+                <span class="contact__icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+                <span><small>Email</small><a href="mailto:crlvncntaquino@gmail.com"><strong>crlvncntaquino@gmail.com</strong></a></span>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon"><use href="#i-phone"/></svg></span>
+                <span><small>Phone</small><a href="tel:+639683577395"><strong>0968 357 7395</strong></a></span>
+              </li>
+              <li>
+                <span class="contact__icon"><svg class="icon"><use href="#i-building"/></svg></span>
+                <span><small>School</small><strong>STI College Rosario</strong></span>
+              </li>
+            </ul>
+
+            <!-- Social links -->
+            <div class="socials" aria-label="Social media">
+              <a href="https://www.facebook.com/vincent.carl.15" class="socials__link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-facebook"/></svg></a>
+              <a href="https://www.instagram.com/cv_aquino" class="socials__link" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-instagram"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Right: contact form (validated in main.js) -->
+          <form class="form reveal" id="contact-form" novalidate style="--d:120ms">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name" required>
+              <span class="field__error" id="name-error" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              <span class="field__error" id="email-error" role="alert"></span>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+              <span class="field__error" id="message-error" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">
+              Send Message
+              <svg class="icon"><use href="#i-send"/></svg>
+            </button>
+
+            <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <span id="year">2026</span> Carl Vincent B. Aquino. All rights reserved.</p>
+      <p class="footer__note">Designed &amp; built with HTML, CSS and JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+    <svg class="icon"><use href="#i-arrow-up"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
